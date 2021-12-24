@@ -20,7 +20,7 @@ from selenium.webdriver.common.by import By
 __author__ = 'Yassine Addi'
 __copyright__ = 'Copyright (C) 2020 Yassine Addi'
 __license__ = 'MIT'
-__version__ = '2021.11.21'
+__version__ = '2021.12.24'
 
 AVAILABLE_QUALITIES = ['1080', '720', '480', '360', '240']
 URL = 'https://lake.egybest.life'
@@ -301,7 +301,7 @@ def main(search, quality, seasons, output_file, dest, executable_path, base_url,
             if c.lower()=='y':
                 continue
         else:
-            click.echo('{} --> added'.format(extracted_links[-1].split('/')[-1]))
+            click.echo('{} --> added'.format(browser.find_element_by_xpath('//div[@class="mainbody"]//h2').text))
         
         cur+=1
     
